@@ -8810,6 +8810,7 @@ label.form-check-label {
   background:rgb(255,204,0);
   padding:0.8rem;
   outline:none;
+  display:none;
  
 }
 
@@ -8817,6 +8818,7 @@ label.form-check-label {
   color:rgba(0,0,0,0.8);
   padding:0.8rem;
   outline:none;
+  display:none;
  
 }
 
@@ -8896,4 +8898,49 @@ label.form-check-label {
         from {opacity: 0;}
         to {opacity: 1;}
       }
+
+      .glide__slides{
+        margin-left:5%;
+       
+
+      }
+
+      @media only screen and (max-width: 767px) {
+        .glide__slides {
+         margin-left:10%;
+        }
+      }
+
+      .glide__bullet{
+        border-color:black;
+        color:black;
+      }
     
+      .img{
+        width:160px;
+        height:120px;
+        margin:0 auto;
+      }
+      @media only screen and (max-width: 767px) {
+        .img{
+          width:160px;
+          height:120px;
+          margin:0 auto;
+        }
+        .para-bottom{
+          font-size:0.9rem;
+        }
+        .card-custom{
+          padding:0.58rem;
+        }
+      }
+
+      .bottom p{
+        color:black !important;
+      }
+
+      .flexbox{
+        color:#ffcc00;
+        margin:2.5rem;
+        display:flex;
+      }

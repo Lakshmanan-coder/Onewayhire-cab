@@ -19,7 +19,9 @@ console.log(oneTrip,roundTrip,btn1,btn2);
 console.log(oneTrip)
 
 btn1.addEventListener('click',()=>{
-       
+       btn1.style.background="rgb(255,204,0) !important"
+       btn2.style.background="none !important"
+      
             oneTrip.classList.add("fade");
             
       
@@ -40,7 +42,8 @@ btn1.addEventListener('click',()=>{
 
 
   btn2.addEventListener('click',()=>{
-    
+    btn2.style.background="rgb(255,204,0) !important"
+    btn1.style.background="none !important"
       oneTrip.classList.add("fade");
     
  
@@ -72,4 +75,20 @@ $(document).ready(function(){
    
   });
 });
+
+new Glide('.glide', {
+  type: 'carousel',
+  gap: 0,
+  startAt: 0,
+  perView: 3,
+ 
+  breakpoints: {
+    1024: {
+      perView: 2
+    },
+    600: {
+      perView: 1
+    }
+  }
+}).mount()
 
