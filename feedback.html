@@ -134,19 +134,19 @@
              <form action="" method="post" id="feedback">
                  <div class="form-group col-sm-6">
                    <label for="">First Name</label>
-                   <input type="text" required name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                   <input type="text" required name="FirstName" id="" class="form-control" placeholder="" aria-describedby="helpId">
                  </div>
                  <div class="form-group col-sm-6">
                    <label for="">Last Name</label>
-                   <input type="text" required name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                   <input type="text" required name="Lastname" id="" class="form-control" placeholder="" aria-describedby="helpId">
                  </div>
                  <div class="form-group col-sm-6">
                    <label for="">Your Email</label>
-                   <input type="email" required name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                   <input type="email" required name="Email" id="" class="form-control" placeholder="" aria-describedby="helpId">
                  </div>
-                 <div class="form-group col-sm-6">
+                 <div class="form-group col-sm-6"> 
                    <label for="">Your Phone No.</label>
-                   <input type="tel" required name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                   <input type="tel" required name="phone" id="" class="form-control" placeholder="" aria-describedby="helpId">
                  </div>
                  <div class="form-group col-sm-6">
                    <label for="">Safety, Politeness & Performance of Driver </label>
@@ -170,7 +170,7 @@
                    </div>
                  </div>
                  <div class="form-group col-sm-6">
-                   <label for="">Would you travel again with TamilNadu Drop Taxi in the future? </label>
+                   <label for="">Would you travel again with Onewayhirecab in the future? </label>
                    <div class="form-check">
                        <label class="form-check-label">
                        <input type="radio" class="form-check-input" name="travel" id="" value="excellent" checked>
@@ -213,7 +213,7 @@
                  </div>
                  <div class="form-group col-sm-6">
                    <label for="">Include any additional information you would tell us</label>
-                   <textarea type="text" name="" class="form-control" placeholder="" ></textarea>
+                   <textarea type="text" name="message" class="form-control" placeholder="" ></textarea>
                    
                  </div>
 
@@ -303,5 +303,36 @@
     ================================================== --> 
     <script src="assets/js/plugins.min.js"></script>
     <script src="assets/js/carrent.min.js"></script> <!-- main-js -->
+
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script>
+        $(function () {
+      
+      $('#feedback').on('submit', function (e) {
+    
+        e.preventDefault();
+    
+        $.ajax({
+          type: 'post',
+          url: 'formfeedback.php',
+          data: $('#feedback').serialize(),
+          success: function (data) {
+            
+                swal("Good job!", "We will contact you asap !", "success");
+                $('#contactform').reset()
+             
+                console.log(data);
+            
+          }
+        });
+    //   alert("hi");
+      });
+    
+    });
+    </script>
 </body>
 </html>
