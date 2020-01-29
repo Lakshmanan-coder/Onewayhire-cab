@@ -77,7 +77,9 @@ Version: 1.0
 --------------------------------------------------------------*/
 html {
   font-size: 100%;
+  
 }
+
 
 body {
   background-color: white;
@@ -3540,7 +3542,9 @@ pagination
   padding: 10px 15px;
   border: 1px solid;
 }
-
+.about-image img{
+  margin-top:3rem;
+}
 .about-item .about-details-content {
   display: table-cell;
 }
@@ -7908,6 +7912,20 @@ input[type="checkbox"]::-ms-check {
   color: #4b4b4b;
 }
 
+.about-content-left{
+     margin-top:10%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .about-content-left {
+    margin-top:3%;
+  }
+}
+@media only screen and (max-width: 996px) {
+  .about-content-left {
+    margin-bottom:3%;
+  }
+}
 /*--------------------------------------------------------------
 ## Contact Page
 --------------------------------------------------------------*/
@@ -8758,6 +8776,7 @@ object {
   width: fit-content;
   margin: auto;
   margin-top: 50px;
+  margin-bottom:1.5rem;
   border: 1px solid #c3c3a9;
   padding: 50px;
   border-radius: 20px;
@@ -8831,8 +8850,8 @@ label.form-check-label {
 
       .card-custom{
         background:rgb(35,44,59);
-        border-top-left-radius: 15px;
-        border-top-right-radius: 10px;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
         padding:1rem;
         box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
       }
@@ -8869,7 +8888,11 @@ label.form-check-label {
        .site-logo strong{
           font-size:1.5rem;
        }
-
+       @media only screen and (max-width: 1440px) {
+        .header-img {
+         top:16%;
+        }
+      }
        @media only screen and (max-width: 1025px) {
         .header-img {
          top:18%;
@@ -8944,3 +8967,86 @@ label.form-check-label {
         margin:2.5rem;
         display:flex;
       }
+
+      .slotholder::before{
+             content:'';
+             width:100%;
+             height:100%;
+             position:absolute;
+             top:0;
+             bottom:0;
+             right:0;
+             left:0;
+             background:rgba(0,0,0,0.5);
+
+      }
+
+      .custom-margin-bottom{
+        margin-bottom:2.5rem;
+      }
+
+      .suv h2, .suv p{
+        color:#FF4818 !important;
+      }
+
+      .suv-bottom{
+        background:#FF4818 !important;
+      }
+  .image-container-major img{
+    width:150px;
+    height:100px;
+  }
+.card-major{
+  width:33.33%;
+  height:33.33%;
+  
+}
+@media only screen and (max-width: 767px) {
+  .card-major {
+      width:50%;
+    
+  }
+ 
+}
+  .cards-container{
+    margin-top:2.5rem;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+  }
+
+  @media only screen and (max-width: 374px) {
+    .image-container-major img{
+      width:130px;
+      height:90px;
+    }
+   
+  }
+
+  @media only screen and (max-width: 1024px) {
+   .card-major{
+       margin-left:0.4rem;
+    }
+   
+  }
+
+  @media only screen and (max-width: 767px) {
+    .card-major{
+        margin-left:0;
+     }
+    
+   }
+ 
+
+
+   .contact-us-content-left{
+     margin-top:50%;
+
+   }
+
+   @media only screen and (max-width:990px){
+     .contact-us-content-left{
+       text-align:center;
+       margin-top:2%;
+     }
+   }
