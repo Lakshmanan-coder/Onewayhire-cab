@@ -281,7 +281,7 @@
           success: function (data) {
             
                 swal("Good job!", "We will contact you asap !", "success");
-                jQuery('#contactform').reset()
+                jQuery('#contactform')[0].reset()
              
                 console.log(data);
             
