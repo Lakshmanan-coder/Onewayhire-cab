@@ -5,7 +5,7 @@ $phone=$_POST["phone"];
 
 // $phone=$_POST["phone"];
 $message=$_POST["message"];
-$to="lakshvj21@gmail.com"; // Receiver Email ID, Replace with your email ID
+$to="onewayhirecab@gmail.com"; // Receiver Email ID, Replace with your email ID
 			            	$subject='Contact Form Submit from OnewayHire cab';
 						
                             $headers="From: ".$email;
