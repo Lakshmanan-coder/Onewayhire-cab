@@ -20,7 +20,7 @@
  							$retval = mail ($to,$subject,$msg,$headers);
 							if($retval == true){
                              echo 'success feedback';
-                            // echo $msg;
+                              echo $msg;
 								
  							}
  							else{
