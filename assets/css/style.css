@@ -9052,7 +9052,7 @@ label.form-check-label {
    }
 
    .car-svg{
-     width:40%;
+     width:30%;
      display: inline-block;
      padding:0;
      margin:0 auto;
@@ -9070,4 +9070,8 @@ label.form-check-label {
    .custom-svg-width{
      width:30%;
      margin:0 auto;
+   }
+
+   .discription{
+     color:rgba(0, 0, 0, 0.7) !important;
    }
