@@ -541,6 +541,14 @@ body:not(.woocommerce) .blog-single-block #comments table td {
 @media only screen and (min-width: 992px) {
   .pd-right-0 {
     padding-right: 0;
+    padding-top:14px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .pd-right-0 {
+    padding-right: 0;
+    padding-top:0px;
+   
   }
 }
 
