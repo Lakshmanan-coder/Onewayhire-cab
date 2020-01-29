@@ -92,25 +92,3 @@ new Glide('.glide', {
   }
 }).mount()
 
-$(function () {
-      
-  $('#contactform').on('submit', function (e) {
-
-    e.preventDefault();
-
-    $.ajax({
-      type: 'post',
-      url: 'form.php',
-      data: $('#contactform').serialize(),
-      success: function (data) {
-        
-            alert("Good job!");
-         
-            console.log(data);
-        
-      }
-    });
-//   alert("hi");
-  });
-
-});
