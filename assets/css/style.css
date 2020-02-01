@@ -42,7 +42,7 @@ Version: 1.0
 # layout
     ## header section
     ## slider section
-    ## check_vehicle section
+    ## check_clecle section
     ## about us section
     ## ability section
     ## accordion section
@@ -3333,6 +3333,8 @@ pagination
 
 .check-vehicle-footer {
   position: relative;
+  margin-top:9%;
+  right:12%;
 }
 
 .check-vehicle-footer .advanced-search {
@@ -8862,6 +8864,7 @@ label.form-check-label {
         border-top-right-radius: 7px;
         padding:1rem;
         box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+        position:relative
       }
 
       .para-bottom{
@@ -8948,15 +8951,11 @@ label.form-check-label {
       }
     
       .img{
-        width:160px;
-        height:120px;
-        margin:0 auto;
+        
       }
       @media only screen and (max-width: 767px) {
         .img{
-          width:160px;
-          height:120px;
-          margin:0 auto;
+         
         }
         .para-bottom{
           font-size:0.9rem;
@@ -8991,6 +8990,7 @@ label.form-check-label {
 
       .custom-margin-bottom{
         margin-bottom:2.5rem;
+      
       }
 
       .suv h2, .suv p{
@@ -9084,4 +9084,28 @@ label.form-check-label {
      color:rgba(0, 0, 0, 0.7) !important;
    }
 
-   
+   .custom-margin-auto{
+      margin: 0 20%;
+   }
+
+   .car-name{
+    color: white;
+    margin: 0 auto;
+    position: relative;
+    top: 10%;
+    font-weight: 700;
+    font-size: 1.5rem;
+    right: -35%;
+   }
+
+   .swift{
+     right:-25% !important;
+   }
+
+   .zest, .xylo ,.innova,.lodge{
+     margin-top:10% !important;
+   }
+
+   .details p{
+     font-size:1.5rem;
+   }

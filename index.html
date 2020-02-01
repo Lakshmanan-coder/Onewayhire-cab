@@ -272,7 +272,7 @@
                             data-splitout="none" 
                             data-responsive_offset="on"
                             style="z-index: 7; font-weight: bold; font-family: 'Exo', sans-serif;">
-                            <a href="#" class="button black-button slider-button" data-fontsize="['22','22','22','22']">Contact Now</a>
+                            <a href="tel:+918610080360" class="button black-button slider-button" data-fontsize="['22','22','22','22']">Contact Now</a>
                         </div>
 
                         <!-- layer no 6 -->
@@ -401,7 +401,7 @@
                             data-splitout="none" 
                             data-responsive_offset="on"
                             style="z-index: 7; font-weight: bold; font-family: 'Exo', sans-serif;">
-                            <a href="#" class="button black-button slider-button" data-fontsize="['22','22','22','22']">Contact Now</a>
+                            <a href="tel:+918610080360" class="button black-button slider-button" data-fontsize="['22','22','22','22']">Contact Now</a>
                         </div>
 
                         <!-- layer no 6 -->
@@ -498,59 +498,20 @@
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
 
-                                <div class="col-md-4">
-                                    <label>Dropping off time</label>
-                                    <div class="input">
-                                        <i class="fa fa-clock-o"></i>
-                                        <input type="text" class="time-selector form-controller" placeholder="12:00 am">
-                                    </div><!--/.input-->
+                                <div class="col-md-4 ">
+                                    <div class="check-vehicle-footer pt-5">
+                                        <div class="row">                            
+                                            
+                                            <button type="submit" class="button">Find car</button>
+                                        </div><!-- /.row -->
+                                    </div><!-- /.check-vehicle-footer -->
                                 </div><!--/.col-md-4-->
                             </div><!-- /.row -->
                         </div><!-- /.regular-search -->
 
-                        <div class="advance-search">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <label>Your Budget</label>
-                                    <div class="input">
-                                        <i class="fa fa-money"></i>
-                                        <input type="text" class="budget-fields form-controller" placeholder="Start form $20">
-                                    </div><!--/.input-->
-                                </div><!--/.col-md-4-->
-                                <div class="col-md-4">
-                                    <label>Class</label>
-                                    <div class="input">
-                                        <select>
-                                            <option value="0" selected="selected">Intermediate</option>
-                                            <option value="1">Intermediate</option>
-                                            <option value="2">Compact</option>
-                                            <option value="3">Station Wagon</option>
-                                            <option value="4">SUV</option>
-                                            <option value="5">Minibus</option>
-                                        </select>
-                                    </div><!--/.input-->
-                                </div><!--/.col-md-4-->
-                                <div class="col-md-4">
-                                    <label>Fuel</label>
-                                    <div class="input">
-                                        <select>
-                                            <option value="0" selected="selected">Petrol</option>
-                                            <option value="1">Diesel</option>
-                                            <option value="2">Octen</option>
-                                        </select>
-                                    </div><!--/.input-->
-                                </div><!--/.col-md-4-->
-                            </div><!-- /.row -->
-                        </div><!-- /.advance-search -->
+                    
 
-                        <div class="check-vehicle-footer">
-                            <div class="row">                            
-                                <div class="advanced-search">
-                                    <a href="#" class="advanced-search-btn"><i class="fa fa-search"></i>Advanced search</a>
-                                </div>
-                                <button type="submit" class="button">Find car</button>
-                            </div><!-- /.row -->
-                        </div><!-- /.check-vehicle-footer -->
+                       
                     </form><!-- /.advance_search_query -->
                 </div><!-- /.col-md-8 -->
             </div><!-- /.row -->
@@ -827,7 +788,7 @@
                                 Contact us
                             </h3><!-- /.widget-title -->
                             <ul>
-                                <li><a href="mailto:sreesvcabs@gmail.com"><i class="fa fa-envelope"></i>onewayhirecab@gmail.com</a></li>
+                                <li><a href="mailto:onewayhirecab@gmail.com"><i class="fa fa-envelope"></i>onewayhirecab@gmail.com</a></li>
                                 <li><a href="tel:+918610080360"><i class="fa fa-phone"></i>+91 86100 80360</a></li>
                                 <li><a href="tel:+919841452099"><i class="fab fa-whatsapp"></i>+91 9841452099</a></li>
                         
@@ -863,7 +824,15 @@
     <!-- RS5.4 Core JS Files -->
     <script src="assets/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script src="assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="./script.js"></script>
+    <script>
+    window.addEventListener('scroll',()=>{
+  if(scrollY > 88){
+    document.querySelector('.header-img').classList.add('pos-sticky');
+  }else{
+    document.querySelector('.header-img').classList.remove('pos-sticky');
+  }
+})
+</script>
     <script>
         jQuery(document).ready(function() {
             var $sliderSelector = jQuery(".carrent-slider");
