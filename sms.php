@@ -7,13 +7,12 @@ $pickupd = $_POST["pickupd"];
 $pickupt = $_POST["pickupt"];
 $dropl = $_POST["dropl"];
 $dropd = $_POST["dropd"];
-$dropt = $_POST["dropt"];
+
 echo $phone 
 echo $pickupl
 echo $pickupd
 echo $pickupt
 echo $dropl
-echo $dropt
 echo $dropd
 
 //$msg= "Pickup-Location: $pickupl \n\n Pickup-date: $pickupd Pickup-Time: $pickupt \n\n \n\n Droping-Location: $dropl \n\n Droping-date: $dropd \n Droping-Time: $dropt";
