@@ -43,7 +43,7 @@
     <!-- RS5.4 Layers and Navigation Styles -->
     <link rel="stylesheet" type="text/css" href="assets/revolution/css/layers.css">
     <link rel="stylesheet" type="text/css" href="assets/revolution/css/navigation.css">
-    
+   
 </head>
 
 <body>
@@ -453,14 +453,14 @@
                 </div><!-- col-md-4 -->
 
                 <div class="col-md-8">
-                    <form action="#" method="get" class="advance-search-query input-night-rider yellow-theme">
+                    <form action="#" method="POST" id="pickupform" class="advance-search-query input-night-rider yellow-theme">
                         <div class="regular-search">                        
                             <div class="row">
                                 <div class="col-md-4">
                                     <label>Picking up location</label>
                                     <div class="input">
                                         <i class="fa fa-map-marker"></i>
-                                        <input type="text" placeholder="Your location" class="pick-location form-controller">
+                                        <input type="text" name="pickupl" placeholder="Your location" class="pick-location form-controller" data-city-search required>
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
 
@@ -468,7 +468,7 @@
                                     <label>Picking up date</label>
                                     <div class="input">
                                         <i class="fa fa-calendar"></i>
-                                        <input type="text" class="date-start date-selector form-controller" placeholder="dd/mm/yy">
+                                        <input type="text" name="pickupd" class="date-start date-selector form-controller" placeholder="dd/mm/yy" required>
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
 
@@ -476,7 +476,7 @@
                                     <label>Picking up Time</label>
                                     <div class="input">
                                         <i class="fa fa-clock-o"></i>
-                                        <input type="time" class=" form-controller" placeholder="24hr format">
+                                        <input type="time" name="pickupt" class=" form-controller" placeholder="24hr format" required>
                                       </div><!--/.input-->
                                 </div><!--/.col-md-4-->
                                 
@@ -486,7 +486,7 @@
                                     <label>Dropping off location</label>
                                     <div class="input">
                                         <i class="fa fa-map-marker"></i>
-                                        <input type="text" placeholder="Off your location" class="drop-location form-controller">
+                                        <input type="text" name="dropl" placeholder="Off your location" class="drop-location form-controller" data-drop-city required>
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
 
@@ -494,7 +494,14 @@
                                     <label>Dropping off date</label>
                                     <div class="input">
                                         <i class="fa fa-calendar"></i>
-                                        <input type="text" class="date-end date-selector form-controller" placeholder="dd/mm/yy">
+                                        <input type="text" name="dropd" class="date-end date-selector form-controller" placeholder="dd/mm/yy" required>
+                                    </div><!--/.input-->
+                                </div><!--/.col-md-4-->
+                                <div class="col-md-4">
+                                    <label>Contact no</label>
+                                    <div class="input">
+                                       
+                                        <input type="text"  class=" form-controller" placeholder="phone" name="phone" required>
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
 
@@ -824,6 +831,8 @@
     <!-- RS5.4 Core JS Files -->
     <script src="assets/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script src="assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxgaV6J5TXybOy9-ZuyfIv7V_JFM47u-0&libraries=places"></script>
+    <script src="map.js"></script>
     <script>
     window.addEventListener('scroll',()=>{
   if(scrollY > 88){
@@ -832,6 +841,31 @@
     document.querySelector('.header-img').classList.remove('pos-sticky');
   }
 })
+</script>
+<script>
+    $(function () {
+  
+  $('#pickupform').on('submit', function (e) {
+
+    e.preventDefault();
+
+    $.ajax({
+      type: 'post',
+      url: 'sms.php',
+      data: $('#pickupform').serialize(),
+      success: function (data) {
+        
+            swal("Good job!", "We will contact you asap !", "success");
+            jQuery('#pickupform')[0].reset()
+         
+            console.log(data);
+        
+      }
+    });
+//   alert("hi");
+  });
+
+});
 </script>
     <script>
         jQuery(document).ready(function() {
@@ -880,6 +914,8 @@
             });
         });
     </script>
+
+
 
     <!-- SLIDER REVOLUTION 5.4 EXTENSIONS  (Load Extensions only on Local File Systems! The following part can be removed on Server for On Demand Loading) -->
     <script src="assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
