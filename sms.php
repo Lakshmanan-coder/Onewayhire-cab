@@ -8,16 +8,16 @@ $pickupt = $_POST["pickupt"];
 $dropl = $_POST["dropl"];
 $dropd = $_POST["dropd"];
 
-echo $phone 
-echo $pickupl
-echo $pickupd
-echo $pickupt
-echo $dropl
-echo $dropd
+echo $phone; 
+echo $pickupl;
+echo $pickupd;
+echo $pickupt;
+echo $dropl;
+echo $dropd;
 
-//$msg= "Pickup-Location: $pickupl \n\n Pickup-date: $pickupd Pickup-Time: $pickupt \n\n \n\n Droping-Location: $dropl \n\n Droping-date: $dropd \n Droping-Time: $dropt";
+$msg= "Pickup-Location: $pickupl \n\n Pickup-date: $pickupd Pickup-Time: $pickupt \n\n \n\n Droping-Location: $dropl \n\n Droping-date: $dropd \n Droping-Time: $dropt";
 // $msg2 = "Name : $name \n\n Email: $email \n\n \n\n Phone:$phone \n\n Message: $message";
-
+echo $msg;
 
 // $url="https://www.sms4india.com/api/v1/sendCampaign";
 // $message = urlencode($msg);// urlencode your message
