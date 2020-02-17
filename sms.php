@@ -9,7 +9,7 @@ $dropl = $_POST["dropl"];
 $dropd = $_POST["dropd"];
 
 
-$msg= "Success One Way Taxi \n Contact: 8610080366 \n\ Name: \n Pickup-Location: $pickupl \n Pickup-Time: $pickupt \n Droping-Location: $dropl \n KM: \n Amount: \n Cab: \n Extra Km Rs: \n Toll,Permit,Hill Charges Extra";
+$msg= "Success One Way Taxi \n Contact: 8610080366 \n Name: \n Pickup-Location: $pickupl \n Pickup-Time: $pickupt \n Droping-Location: $dropl ";
 
 echo $msg;
 
