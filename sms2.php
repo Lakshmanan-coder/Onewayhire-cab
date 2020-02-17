@@ -7,7 +7,7 @@ $dropl = $_POST["dropl"];
 $dropd = $_POST["dropd"];
 
 
-$msg= "Success from Oneway \nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:   Amount:  Extra km rs:  Toll, Permit, Hill Charges Extra www.onewayhirecab.com";
+//$msg= "Success from Oneway \nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:   Amount:  Extra km rs:  Toll, Permit, Hill Charges Extra www.onewayhirecab.com";
 	// Authorisation details.
 	$username = "lakshmanan.nyxwolves@gmail.com";
 	$hash = "da7f0f0aa16268655869993b0fcb7d1bbc0ba94e48a4848c21d1b143dbd865b5";
@@ -18,7 +18,7 @@ $msg= "Success from Oneway \nContact:8610080366 Pickup-Location: $pickupl Pickup
 	// Data for text message. This is the text message data.
 	$sender = "ONEWAY"; // This is who the message appears to be from.
 	$numbers = $phone; // A single number or a comma-seperated list of numbers
-	$message = $msg;
+	$message = "Success from Oneway \nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:   Amount:  Extra km rs:  Toll, Permit, Hill Charges Extra www.onewayhirecab.com";
 	// 612 chars or less
 	// A single number or a comma-seperated list of numbers
 	$message = urlencode($message);
