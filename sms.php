@@ -8,16 +8,10 @@ $pickupt = $_POST["pickupt"];
 $dropl = $_POST["dropl"];
 $dropd = $_POST["dropd"];
 
-echo $phone; 
-echo $pickupl;
-echo $pickupd;
-echo $pickupt;
-echo $dropl;
-echo $dropd;
 
-$msg= "Pickup-Location: $pickupl \n\n Pickup-date: $pickupd Pickup-Time: $pickupt \n\n \n\n Droping-Location: $dropl \n\n Droping-date: $dropd \n\n";
+$msg= "Success One Way Taxi \n Contact: 8610080366 \n\n Name: \n Pickup-Location: $pickupl \n Pickup-Time: $pickupt \n Droping-Location: $dropl \n KM: \n Amount: \n Cab: \n Extra Km Rs: \n\n Toll,Permit,Hill Charges Extra \n\n";
 
-echo $msg;
+
 
 $url="https://www.sms4india.com/api/v1/sendCampaign";
 $message = urlencode($msg);// urlencode your message
