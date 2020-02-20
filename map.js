@@ -77,7 +77,7 @@ $.ajax({
   url  : "sms.php",  //your page
   data : { kms : kms, rate : valueint},// passing the values
   success: function(res){  
-                        console.log("hello")      }
+                        console.log(res)      }
 });
 
 }else{
