@@ -1,6 +1,11 @@
 const searchBox = document.querySelector('[data-city-search]')
 
 const search = new google.maps.places.SearchBox(searchBox)
+const kms
+const latitude 
+const longitude
+const latitude2
+const longitude2
 
 search.addListener('places_changed',()=>{
     const place = search.getPlaces()
@@ -28,12 +33,17 @@ search2.addListener('places_changed',()=>{
 
 })
 
+console.log(latitude,longitude,latitude2,longitude2)
 async function distanceCalculator(){
   const proxy = "https://cors-anywhere.herokuapp.com/";
-  const url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=12.951611%2080.14616629999999&destinations=13.1076828%2080.1522449&key=AIzaSyBxgaV6J5TXybOy9-ZuyfIv7V_JFM47u-0";
+  const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=${latitude},${longitude}&destinations=${latitude2},${longitude2}&key=AIzaSyBxgaV6J5TXybOy9-ZuyfIv7V_JFM47u-0`;
    const data = await fetch(proxy + url);
    const response = await data.json()
-   console.log(response)
+   const kms =await response.rows[0].elements[0].distance.text
 } 
 
-distanceCalculator();
+distanceCalculator()
+
+
+
+
