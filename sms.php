@@ -12,7 +12,7 @@ $rate=$_POST["rate"];
 
 echo $rate;
 
-$msg= "Success\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$kms   Amount: Rs. $rate  Extra km rs:  Toll, Permit, Hill Charges Extra";
+$msg= "Success\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate  Extra km rs:  Toll, Permit, Hill Charges Extra";
 
 echo $msg;
 
