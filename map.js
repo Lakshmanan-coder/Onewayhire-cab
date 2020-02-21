@@ -23,7 +23,8 @@ cartype=car.value
 const form = document.querySelector('#pickupform')
 
 
-form.addEventListener('submit',()=>{
+form.addEventListener('submit',(e)=>{
+      e.preventDefault()
       pickupl = searchBox.value
       pickupd = document.querySelector('.date-start').value
       pickupt = document.querySelector('#time').value
