@@ -12,9 +12,40 @@ var latitude2
 var longitude2
 var destination=[]
 
+     var pickupl 
+     var pickupd 
+     var pickupt
+     var dropl 
+     var phone 
+     var formelements=[]
 const car = document.querySelector('#cars');
 cartype=car.value
+const form = document.querySelector('#pickupform')
 
+
+form.addEventListener('submit',()=>{
+      pickupl = searchBox.value
+      pickupd = document.querySelector('.date-start').value
+      pickupt = document.querySelector('#time').value
+      dropl =searchBox1.value
+      phone =document.querySelector('#phone').value
+
+    formelements.push(pickupl)
+    formelements.push(dropl)
+    formelements.push(phone)
+    formelements.push(pickupt)
+    formelements.push(pickupd)
+
+
+     searchBox.value=""
+     document.querySelector('.date-start').value=""
+     document.querySelector('#time').value=""
+    searchBox1.value=""
+     document.querySelector('#phone').value=""
+     document.querySelector('.date-end').value=""
+
+     return formelements
+})
 
 car.addEventListener('change',()=>{
   console.log(cartype)
@@ -54,7 +85,7 @@ search2.addListener('places_changed',()=>{
 
 async function distanceCalculator(){
 
-  
+  console.log(formelements)
   if((latitude && longitude && destination) != undefined ){
      const lat2 = destination[0]
      const long2=destination[1]
@@ -75,8 +106,10 @@ console.log(kms)
 $.ajax({
   type : "POST",  //type of method
   url  : "sms.php",  //your page
-  data : { kms : kms, rate : valueint},// passing the values
-  success: function(res){  
+  data : { kms : kms, rate : valueint,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4]},// passing the values
+  success: function(res){ 
+    alert("Good job!", "We will contact you asap !", "success");
+    
                         console.log(res)      }
 });
 

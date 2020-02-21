@@ -476,7 +476,7 @@
                                     <label>Picking up Time</label>
                                     <div class="input">
                                         <i class="fa fa-clock-o"></i>
-                                        <input type="time" name="pickupt" class=" form-controller" placeholder="24hr format" required>
+                                        <input type="time" name="pickupt" class=" form-controller" placeholder="24hr format" id="time" required>
                                       </div><!--/.input-->
                                 </div><!--/.col-md-4-->
                                 
@@ -510,7 +510,7 @@
                                     <label>Contact number</label>
                                     <div class="input">
                                        
-                                        <input type="text"  class=" form-controller" placeholder="phone" name="phone" required>
+                                        <input type="text"  class=" form-controller" placeholder="phone" name="phone" id="phone" required>
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
 
@@ -852,29 +852,29 @@
 })
 </script>
 <script>
-    $(function () {
+//     $(function () {
   
-  $('#pickupform').on('submit', function (e) {
+//   $('#pickupform').on('submit', function (e) {
 
-    e.preventDefault();
+//     e.preventDefault();
 
-    $.ajax({
-      type: 'post',
-      url: 'sms.php',
-      data: $('#pickupform').serialize(),
-      success: function (data) {
+//     $.ajax({
+//       type: 'post',
+//       url: 'sms.php',
+//       data: $('#pickupform').serialize(),
+//       success: function (data) {
         
-            alert("Good job!", "We will contact you asap !", "success");
-            jQuery('#pickupform')[0].reset()
+//             alert("Good job!", "We will contact you asap !", "success");
+//             jQuery('#pickupform')[0].reset()
          
-            console.log(data);
+//             console.log(data);
         
-      }
-    });
-//   alert("hi");
-  });
+//       }
+//     });
+// //   alert("hi");
+//   });
 
-});
+// });
 </script>
     <script>
         jQuery(document).ready(function() {
