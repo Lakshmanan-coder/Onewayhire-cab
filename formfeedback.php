@@ -12,11 +12,11 @@
 // $phone=$_POST["phone"];
  $message=$_POST["message"];
  $to="onewayhirecab@gmail.com"; // Receiver Email ID, Replace with your email ID
- 			            	$subject='Feedback form Submit from OnewayHire cab';
+ 			            	$subject='Feedback form - OnewayHire cab';
 						
                              $headers="From: ".$email;
 							 
- 							 $msg="Name : $name $lname \n\n Email: $email \n\n \n\n Phone:$phone \n\n Safety,politness & performance $safety\n\n Would you travel again with oneway hire cab in future $travel \n\n Would you refer to others $refer \n\n Feedback: $message";
+ 							 $msg="Name : $name $lname \n\n Email: $email \n\n \n\n Phone:$phone \n\n Safety,politness & performance: $safety\n\n Would you travel again with oneway hire cab in future: $travel \n\n Would you refer to others: $refer \n\n Feedback: $message";
  							$retval = mail ($to,$subject,$msg,$headers);
 							if($retval == true){
                              echo 'success feedback';
