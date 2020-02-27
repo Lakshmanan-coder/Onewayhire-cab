@@ -13,6 +13,9 @@ $name=$_POST["name"];
 
 // echo $rate;
 
+if($dropd===''){
+    $dropd='-';
+}
 
 
 $msg= "Success\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate  Extra km rs:  Toll, Permit, Hill Charges Extra";

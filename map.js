@@ -20,6 +20,7 @@ var displaykms
      var pickupd 
      var pickupt
      var dropl 
+     var dropd 
      var phone 
      var name
      var formelements=[]
@@ -44,6 +45,7 @@ form.addEventListener('submit',(e)=>{
       pickupd = document.querySelector('.date-start').value
       pickupt = document.querySelector('#time').value
       dropl =searchBox1.value
+      dropd =document.querySelector('.date-end').value
       phone =document.querySelector('#phone').value
       name= document.querySelector('.nameCustomer').value
 
@@ -53,6 +55,7 @@ form.addEventListener('submit',(e)=>{
     formelements.push(pickupt)
     formelements.push(pickupd)
     formelements.push(name)
+    formelements.push(dropd)
 
 
      searchBox.value=""
@@ -175,20 +178,20 @@ console.log(kms)
 // console.log(formelements,totalRate,kms)
 document.querySelector('.msg-btn').addEventListener('click',()=>{
   console.log(formelements,totalRate,kms)
-  $.ajax({
-  type : "POST",  //type of method
-  url  : "sms.php",  //your page
-  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5]},// passing the values
-  success: function(res){ 
-    alert("Good job!", "We will contact you asap !", "success");
+//   $.ajax({
+//   type : "POST",  //type of method
+//   url  : "sms.php",  //your page
+//   data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5]},// passing the values
+//   success: function(res){ 
+//     alert("Good job!", "We will contact you asap !", "success");
     
-                        console.log(res)      }
-});
+//                         console.log(res)      }
+// });
 
 $.ajax({
   type : "POST",  //type of method
   url  : "email.php",  //your page
-  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5]},// passing the values
+  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6]},// passing the values
   success: function(res){ 
   
     
