@@ -22,7 +22,7 @@ $msg= "Success\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $picku
 $to="onewayhirecab@gmail.com"; // Receiver Email ID, Replace with your email ID
 			            	$subject='Customer Request Form - OnewayHire cab';
 						
-                            $headers="From: ".$email;
+                            $headers="From: No-reply@onewayhirecab.com";
 							 
 							 $msg2="Name : $name \n\n Contact No: $phone \n\n \n\n Pickup-Location: $pickupl\n\n Droping-Location: $dropl \n\nPickup-Time: $pickupt \n\n Amount: Rs. $rate\n\n Drop Date: $dropd";
 							$retval = mail ($to,$subject,$msg2,$headers);
