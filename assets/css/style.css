@@ -7603,6 +7603,7 @@ input[type="checkbox"]::-ms-check {
 
 .yellow-color .button {
   background-color: #ffcc00;
+  
 }
 
 .yellow-color.widget.widget_place_category ul li a {
@@ -9232,4 +9233,14 @@ line-height: 52px;
 
 .modal-content{
   background:rgba(43,41,55);
+}
+
+@media only screen and (max-width:986px) {
+.yellow-theme button {
+  background: #ffcc00;
+  text-align: center;
+  float: none;
+  margin-left: 50%;
+  width: inherit;
+}
 }
