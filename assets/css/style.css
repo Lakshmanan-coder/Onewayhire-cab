@@ -9232,4 +9232,45 @@ line-height: 52px;
   margin-left: 50%;
   width: inherit;
 }
+
+.responsive-width{
+  width:10%;
+
+  
 }
+}
+
+@media only screen and (max-width:426px) {
+  .yellow-theme button {
+    background: #ffcc00;
+    text-align: center;
+    float: none;
+    margin-left: 35%;
+    width: inherit;
+  }
+  .responsive-width{
+    width:10%;
+
+    
+  }
+  }
+  @media only screen and (max-width:370px) {
+    .yellow-theme button {
+      background: #ffcc00;
+      text-align: center;
+      float: none;
+      margin-left: 25%;
+      width: inherit;
+    }
+    .responsive-width{
+      width:20%;
+
+      
+    }
+    }
+
+    .responsive-width{
+      
+
+      
+    }
