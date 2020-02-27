@@ -11,31 +11,48 @@ var longitude
 var latitude2
 var longitude2
 var destination=[]
+var totalRate
+var tripType 
+var beta
+var displaykms
 
      var pickupl 
      var pickupd 
      var pickupt
      var dropl 
      var phone 
+     var name
      var formelements=[]
+    
 const car = document.querySelector('#cars');
 cartype=car.value
 const form = document.querySelector('#pickupform')
+const trip =document.querySelector('#tripType')
+tripType=trip.value
 
+if(trip.value==="droptrip"){
+  
+  document.querySelector('.type-selector').classList.add('display-none-js')
+}else{
+  document.querySelector('.type-selector').classList.remove('display-none-js')
+}
 
 form.addEventListener('submit',(e)=>{
       e.preventDefault()
+      $('#myModal').modal('show')
       pickupl = searchBox.value
       pickupd = document.querySelector('.date-start').value
       pickupt = document.querySelector('#time').value
       dropl =searchBox1.value
       phone =document.querySelector('#phone').value
+      name= document.querySelector('.nameCustomer').value
 
     formelements.push(pickupl)
     formelements.push(dropl)
     formelements.push(phone)
     formelements.push(pickupt)
     formelements.push(pickupd)
+    formelements.push(name)
 
 
      searchBox.value=""
@@ -44,6 +61,7 @@ form.addEventListener('submit',(e)=>{
     searchBox1.value=""
      document.querySelector('#phone').value=""
      document.querySelector('.date-end').value=""
+     document.querySelector('.nameCustomer').value=""
 
      return formelements
 })
@@ -51,6 +69,17 @@ form.addEventListener('submit',(e)=>{
 car.addEventListener('change',()=>{
   console.log(cartype)
   return cartype=car.value;
+})
+
+trip.addEventListener('change',()=>{
+  console.log(tripType)
+  if(trip.value==="droptrip"){
+    document.querySelector('.type-selector').classList.add('display-none-js')
+  }else{
+    document.querySelector('.type-selector').classList.remove('display-none-js')
+  }
+  return tripType=trip.value;
+
 })
 search.addListener('places_changed',()=>{
     const place = search.getPlaces()
@@ -99,25 +128,64 @@ async function distanceCalculator(){
   
 
   if(cartype==="sedan"){
-  value = kms*12}else{value = kms*15}
+    if(tripType==="droptrip"){ 
+      value = kms*12
+      beta=300
+    }else{
+      value = kms*10*2
+      beta=400
+    }
+ }else{if(tripType==="droptrip"){ 
+  value = kms*15
+  beta=300
+}else{
+  value = kms*13*2
+  beta=400
+}}
+
+if(tripType==="droptrip"){displaykms=kms}else{
+  displaykms=(kms*2)}
+ 
+
   valueint=parseInt(value)
+  totalRate = valueint + beta
+   
+  document.querySelector('#nameModal').innerHTML=formelements[5]
+  document.querySelector('#totalModal').innerHTML=totalRate
+  document.querySelector('#tripInfo').innerHTML=tripType
+  document.querySelector('#pickuplModal').innerHTML=`Pickup Location: ${formelements[0]}`
+  document.querySelector('#droplModal').innerHTML=`Drop Location:${formelements[1]}`
+  
+  document.querySelector('#kmsModal').innerHTML=displaykms
+  document.querySelector('#rateModal').innerHTML=`Rate:${valueint}`
+  document.querySelector('#betaModal').innerHTML=`Driver Beta :${beta}`
+  document.querySelector('#totalModals').innerHTML=`Total Rate :${totalRate}`
+ 
+  document.querySelector('.display-none-custom').click()
   console.log(miles)
   console.log(valueint)
 console.log(kms)
-$.ajax({
+
+
+
+}else{
+    console.log("no values")
+  }
+} 
+// console.log(formelements,totalRate,kms)
+document.querySelector('.msg-btn').addEventListener('click',()=>{
+  // console.log(formelements,totalRate,kms)
+  $.ajax({
   type : "POST",  //type of method
   url  : "sms.php",  //your page
-  data : { kms : kms, rate : valueint,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4]},// passing the values
+  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5]},// passing the values
   success: function(res){ 
     alert("Good job!", "We will contact you asap !", "success");
     
                         console.log(res)      }
 });
 
-}else{
-    console.log("no values")
-  }
-} 
+})
 
 
 

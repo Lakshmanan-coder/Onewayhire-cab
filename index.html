@@ -458,6 +458,7 @@
                     <form action="#" method="POST" id="pickupform" class="advance-search-query input-night-rider yellow-theme" onsubmit="distanceCalculator()">
                         <div class="regular-search">                        
                             <div class="row">
+                             
                                 <div class="col-md-4">
                                     <label>Picking up location</label>
                                     <div class="input">
@@ -465,24 +466,6 @@
                                         <input type="text" name="pickupl" placeholder="Your location" class="pick-location form-controller" data-city-search required>
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
-
-                                <div class="col-md-4">
-                                    <label>Picking up date</label>
-                                    <div class="input">
-                                        <i class="fa fa-calendar"></i>
-                                        <input type="text" name="pickupd" class="date-start date-selector form-controller" placeholder="dd/mm/yy" required>
-                                    </div><!--/.input-->
-                                </div><!--/.col-md-4-->
-
-                                <div class="col-md-4">
-                                    <label>Picking up Time</label>
-                                    <div class="input">
-                                        <i class="fa fa-clock-o"></i>
-                                        <input type="time" name="pickupt" class=" form-controller" placeholder="24hr format" id="time" required>
-                                      </div><!--/.input-->
-                                </div><!--/.col-md-4-->
-                                
-                                <div class="clearfix"></div><!-- /.clearfix -->
 
                                 <div class="col-md-4">
                                     <label>Dropping off location</label>
@@ -493,21 +476,34 @@
                                 </div><!--/.col-md-4-->
 
                                 <div class="col-md-4">
-                                    <label>Dropping off date</label>
+                                    <label>Picking up Time</label>
                                     <div class="input">
-                                        <i class="fa fa-calendar"></i>
-                                        <input type="text" name="dropd" class="date-end date-selector form-controller" placeholder="dd/mm/yy" required>
-                                    </div><!--/.input-->
+                                        <i class="fa fa-clock-o"></i>
+                                        <input type="time" name="pickupt" class=" form-controller" placeholder="24hr format" id="time" required>
+                                      </div><!--/.input-->
                                 </div><!--/.col-md-4-->
+
                                 <div class="col-md-4">
-                                   <div class="input">
-                                    <label for="cars">Sedan/Suv</label>
-                                        <select id="cars" name="cars">
-                                            <option value="sedan" class="color-black">Sedan</option>
-                                            <option value="suv" class="color-black">Suv</option>
-                                        </select>
+                                    <div class="input">
+                                     <label for="cars">Sedan/Suv</label>
+                                         <select id="cars" name="cars">
+                                             <option value="sedan" class="color-black">Sedan</option>
+                                             <option value="suv" class="color-black">Suv</option>
+                                         </select>
+                                     </div><!--/.input-->
+                                 </div><!--/.col-md-4-->
+
+                               
+
+                                 
+                                <div class="col-md-4">
+                                    <label>Name</label>
+                                    <div class="input">
+                                       
+                                        <input type="text" name="name" class=" form-controller nameCustomer" placeholder="ex.reba" required>
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
+
                                 <div class="col-md-4">
                                     <label>Contact number</label>
                                     <div class="input">
@@ -515,18 +511,96 @@
                                         <input type="text"  class=" form-controller" placeholder="phone" name="phone" id="phone" required>
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
+                                
+                                <div class="clearfix"></div><!-- /.clearfix -->
+                                <div class="col-md-4">
+                                    <div class="input">
+                                     <label for="tripType">Drop Trip/Round Trip</label>
+                                         <select id="tripType" name="tripType">
+                                             <option value="droptrip" class="color-black">Drop trip</option>
+                                             <option value="roundtrip" class="color-black">Round trip</option>
+                                         </select>
+                                     </div><!--/.input-->
+                                 </div><!--/.col-md-4-->
+
+                                <div class="col-md-4 ">
+                                    <label>Picking up date</label>
+                                    <div class="input">
+                                        <i class="fa fa-calendar"></i>
+                                        <input type="text" name="pickupd" class="date-start date-selector form-controller" placeholder="dd/mm/yy" required>
+                                    </div><!--/.input-->
+                                </div><!--/.col-md-4-->
+
+                                <div class="col-md-4 type-selector">
+                                    <label>Dropping off date</label>
+                                    <div class="input">
+                                        <i class="fa fa-calendar"></i>
+                                        <input type="text" name="dropd" class="date-end date-selector form-controller" placeholder="dd/mm/yy" >
+                                    </div><!--/.input-->
+                                </div><!--/.col-md-4-->
+                             
+                              
 
                                 <div class="col-md-4 ">
                                     <div class="check-vehicle-footer pt-5">
                                         <div class="row">                            
                                             
-                                            <button type="submit" class="button">Find car</button>
+                                            <button type="submit" class="button" >Continue</button>
+
+                                            <button type="button" class="btn btn-primary display-none-custom" data-toggle="modal" data-target="#exampleModalCenter">
+                                                Launch demo modal
+                                              </button>
                                         </div><!-- /.row -->
                                     </div><!-- /.check-vehicle-footer -->
                                 </div><!--/.col-md-4-->
                             </div><!-- /.row -->
                         </div><!-- /.regular-search -->
-
+                    
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                
+                                <div class="modal-body">
+                                    <button type="button" class="close close-overide" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    <div class="container width-modal-body">
+                                        
+                                    <div class="whole">
+                                        <div class="type">
+                                            <p class="name" id ="nameModal">Lakshmanan</p>
+                                            </div>
+                                        <div class="plan">
+                                    
+                                            <div class="header">
+                                                <span>RS</span><span class="rate" id="totalModal">29</span>
+                                               
+                                                <p class="month" id="tripInfo"></p>
+                                            </div>
+                                            <div class="content">
+                                                <ul class="modal-ul">
+                                                    <li class="modal-li"  id="pickuplModal">Pickup location :</li>
+                                                    <li class="modal-li"  id="droplModal">Drop location :</li>
+                                                    <li class="modal-li"  id="kmsModal">Kms:</li>
+                                                    <li class="modal-li"  id="rateModal">Rate: </li>
+                                                    <li class="modal-li"  id="betaModal">Driver beta: </li>
+                                                    <li class="modal-li"  id="totalModals">Total rate:</li>
+                                                </ul>
+                                    
+                                            </div>
+                                            
+                                            <div class="price">
+                                            <button class="btn btn-primary msg-btn" data-dismiss="modal">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                              
+                              </div>
+                            </div>
+                          </div>
                     
 
                        
