@@ -19,21 +19,21 @@ $msg= "Success\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $picku
 
 // echo $msg;
 
-$to="onewayhirecab@gmail.com"; // Receiver Email ID, Replace with your email ID
-			            	$subject='Customer Request Form - OnewayHire cab';
+// $to="onewayhirecab@gmail.com"; // Receiver Email ID, Replace with your email ID
+// 			            	$subject='Customer Request Form - OnewayHire cab';
 						
-                            $headers="From: ".$email;
+//                             $headers="From: ".$email;
 							 
-							 $msg2="Name : $name \n\n Contact No: $phone \n\n \n\n Pickup-Location: $pickupl\n\n Droping-Location: $dropl \n\nPickup-Time: $pickupt \n\n Amount: Rs. $rate\n\n Drop Date: $dropd";
-							$retval = mail ($to,$subject,$msg2,$headers);
-							if($retval == true){
-							echo 'success';
+// 							 $msg2="Name : $name \n\n Contact No: $phone \n\n \n\n Pickup-Location: $pickupl\n\n Droping-Location: $dropl \n\nPickup-Time: $pickupt \n\n Amount: Rs. $rate\n\n Drop Date: $dropd";
+// 							$retval = mail ($to,$subject,$msg2,$headers);
+// 							if($retval == true){
+// 							echo 'success';
 								
-							}
-							else{
-							echo 'failed';
+// 							}
+// 							else{
+// 							echo 'failed';
 								
-							}
+// 							}
 
 $url="https://www.sms4india.com/api/v1/sendCampaign";
 $message = urlencode($msg);// urlencode your message
