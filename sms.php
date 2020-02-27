@@ -11,13 +11,13 @@ $km=$_POST["kms"];
 $rate=$_POST["rate"];
 $name=$_POST["name"];
 
-echo $rate;
+// echo $rate;
 
 
 
 $msg= "Success\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate  Extra km rs:  Toll, Permit, Hill Charges Extra";
 
-echo $msg;
+// echo $msg;
 
 $to="lakshvj21@gmail.com"; // Receiver Email ID, Replace with your email ID
 			            	$subject='Contact Form - OnewayHire cab';
