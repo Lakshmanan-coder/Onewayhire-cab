@@ -9218,7 +9218,7 @@ line-height: 52px;
 }
 
 .display-none-custom{
-  display:none;
+  display:none !important;
 }
 
 .display-none-js{
