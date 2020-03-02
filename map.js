@@ -57,6 +57,7 @@ form.addEventListener('submit',(e)=>{
       dropd =document.querySelector('.date-end').value
       phone =document.querySelector('#phone').value
       name= document.querySelector('.nameCustomer').value
+     formelements=[]
 
     formelements.push(pickupl)
     formelements.push(dropl)
@@ -243,7 +244,7 @@ $.ajax({
   url  : "email.php",  //your page
   data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6]},// passing the values
   success: function(res){ 
-  
+   window.location.reload();
     
                         console.log(res)      }
 });
@@ -252,7 +253,7 @@ $.ajax({
 
 })
 
-formelements.length= 0;
+
 
 
 
