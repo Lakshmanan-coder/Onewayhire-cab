@@ -248,7 +248,11 @@ $.ajax({
                         console.log(res)      }
 });
 
+
+
 })
+
+formelements.length= 0;
 
 
 
