@@ -66,7 +66,12 @@ form.addEventListener('submit',(e)=>{
     formelements.push(pickupd)
     formelements.push(name)
     formelements.push(dropd)
-
+   
+    if(tripType==="droptrip"){
+      distanceCalculator()
+    }else {
+      roundtripCalculator()
+    }
 
      searchBox.value=""
      document.querySelector('.date-start').value=""
@@ -136,7 +141,7 @@ search2.addListener('places_changed',()=>{
 
 
 async function distanceCalculator(){
-
+  
   console.log(formelements)
   if((latitude && longitude && destination) != undefined ){
      const lat2 = destination[0]
@@ -145,7 +150,7 @@ async function distanceCalculator(){
   const url = `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${latitude},${longitude}&destinations=${lat2},${long2}&key=AIzaSyBxgaV6J5TXybOy9-ZuyfIv7V_JFM47u-0`;
    const data = await fetch(proxy + url);
    const response = await data.json()
-  var miles =await response.rows[0].elements[0].distance.text
+  var miles =await response.rows[0].elements[0].distance.text || 0
   kms = miles.split(/(\s+)/)[0]
   
 
@@ -163,39 +168,43 @@ async function distanceCalculator(){
       }
     }
     //round trip and sedan
-    else{
-      console.log(dropd , pickupd)
-      var date1 =dropd.split('/')
-      var date2 =  pickupd.split('/')
-      console.log(date1,date2)
-      const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-      const firstDate = new Date(date1[2], date1[1], date1[0]);
-      const secondDate = new Date(date2[2], date2[1], date2[0]);
+    // else{
+    //   console.log(dropd , pickupd)
+    //   var date1 =dropd.split('/')
+    //   var date2 =  pickupd.split('/')
+    //   console.log(date1,date2)
+    //   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    //   const firstDate = new Date(date1[2], date1[1], date1[0]);
+    //   const secondDate = new Date(date2[2], date2[1], date2[0]);
       
-      const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+    //   const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
       
-      value = diffDays*250*10
-      beta=300
-    }
+    //   value = diffDays*250*10
+    //   beta=300
+    // }
  }else{if(tripType==="droptrip"){ 
    if(kms >= 400){ value = kms*15
     beta=600}else{
   value = kms*15
   beta=400}
-}else{
-  console.log(dropd , pickupd)
-  var date1 =dropd.split('/')
-  var date2 =  pickupd.split('/')
-  console.log(date1,date2)
-  const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
-  const firstDate = new Date(date1[2], date1[1], date1[0]);
-  const secondDate = new Date(date2[2], date2[1], date2[0]);
+ }
+
+}
+//else{
+//   console.log(dropd , pickupd)
+//   var date1 =dropd.split('/')
+//   var date2 =  pickupd.split('/')
+//   console.log(date1,date2)
+//   const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+//   const firstDate = new Date(date1[2], date1[1], date1[0]);
+//   const secondDate = new Date(date2[2], date2[1], date2[0]);
   
-  const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+//   const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
   
-  value = diffDays*250*13
-  beta=400
-}}
+//   value = diffDays*250*13
+//   beta=400
+// }
+
 
 if(tripType==="droptrip"){displaykms=kms}else{
   displaykms=(kms*2)}
@@ -206,7 +215,7 @@ if(tripType==="droptrip"){displaykms=kms}else{
    
   document.querySelector('#nameModal').innerHTML=formelements[5]
   document.querySelector('#totalModal').innerHTML=totalRate
-  document.querySelector('#tripInfo').innerHTML=tripType
+  document.querySelector('#tripInfo').innerHTML="Drop Trip"
   document.querySelector('#pickuplModal').innerHTML=`Pickup Location: ${formelements[0]}`
   document.querySelector('#droplModal').innerHTML=`Drop Location:${formelements[1]}`
   
@@ -222,10 +231,54 @@ console.log(kms)
 
 
 
-}else{
-    console.log("no values")
-  }
+}
 } 
+
+function roundtripCalculator(){
+  if(cartype==="sedan"){
+    var date1 =dropd.split('/')
+    var date2 =  pickupd.split('/')
+      console.log(date1,date2)
+      const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+      const firstDate = new Date(date1[2], date1[1], date1[0]);
+      const secondDate = new Date(date2[2], date2[1], date2[0]);
+      
+      const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+      
+      value = diffDays*250*10
+      beta=300
+      totalRate=value+beta
+      kms="Per day 250kms"
+  }
+  //car type suv 
+  else{
+  var date1 =dropd.split('/')
+  var date2 =  pickupd.split('/')
+    console.log(date1,date2)
+    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const firstDate = new Date(date1[2], date1[1], date1[0]);
+    const secondDate = new Date(date2[2], date2[1], date2[0]);
+    
+    const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+    
+    value = diffDays*250*13
+    beta=400
+    totalRate=value+beta
+    kms="Per day 250kms"
+  }
+  document.querySelector('#nameModal').innerHTML=formelements[5]
+  document.querySelector('#totalModal').innerHTML=totalRate
+  document.querySelector('#tripInfo').innerHTML="Round Trip"
+  document.querySelector('#pickuplModal').innerHTML=`Pickup Location: ${formelements[0]}`
+  document.querySelector('#droplModal').innerHTML=`Drop Location:${formelements[1]}`
+  
+  document.querySelector('#kmsModal').innerHTML= "Per day 250kms"
+  document.querySelector('#rateModal').innerHTML=`Rate:${value}`
+  document.querySelector('#betaModal').innerHTML=`Driver Beta :${beta}`
+  document.querySelector('#totalModals').innerHTML=`Total Rate :${totalRate}`
+ 
+  document.querySelector('.display-none-custom').click()
+}
 // console.log(formelements,totalRate,kms)
 document.querySelector('.msg-btn').addEventListener('click',()=>{
   console.log(formelements,totalRate,kms)
@@ -233,6 +286,7 @@ document.querySelector('.msg-btn').addEventListener('click',()=>{
   type : "POST",  //type of method
   url  : "sms.php",  //your page
   data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5]},// passing the values
+ 
   success: function(res){ 
     alert("Good job!", "We will contact you asap !", "success");
     
@@ -244,7 +298,7 @@ $.ajax({
   url  : "email.php",  //your page
   data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6]},// passing the values
   success: function(res){ 
-   window.location.reload();
+ 
     
                         console.log(res)      }
 });
