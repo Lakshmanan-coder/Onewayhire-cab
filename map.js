@@ -1,4 +1,5 @@
 const searchBox = document.querySelector('[data-city-search]')
+const searchBox1 = document.querySelector('[data-drop-city]')
 
 const search = new google.maps.places.SearchBox(searchBox)
 var miles
@@ -34,8 +35,16 @@ tripType=trip.value
 if(trip.value==="droptrip"){
   
   document.querySelector('.type-selector').classList.add('display-none-js')
+  document.querySelector('.drop-location-toggle').classList.remove('display-none-js')
+  document.querySelector('.toggler-clearfix-1').classList.remove('display-none-js')
+  document.querySelector('.toggler-clearfix').classList.add('display-none-js')
+  // searchBox1.classList.remove('display-none-js')
 }else{
   document.querySelector('.type-selector').classList.remove('display-none-js')
+  document.querySelector('.drop-location-toggle').classList.add('display-none-js')
+  document.querySelector('.toggler-clearfix').classList.remove('display-none-js')
+  document.querySelector('.toggler-clearfix-1').classList.add('display-none-js')
+  // searchBox1.classList.add('display-none-js')
 }
 
 form.addEventListener('submit',(e)=>{
@@ -78,8 +87,17 @@ trip.addEventListener('change',()=>{
   console.log(tripType)
   if(trip.value==="droptrip"){
     document.querySelector('.type-selector').classList.add('display-none-js')
+    document.querySelector('.drop-location-toggle').classList.remove('display-none-js')
+    document.querySelector('.toggler-clearfix-1').classList.remove('display-none-js')
+    document.querySelector('.toggler-clearfix').classList.add('display-none-js')
+    // searchBox1.classList.remove('display-none-js')
   }else{
     document.querySelector('.type-selector').classList.remove('display-none-js')
+    document.querySelector('.drop-location-toggle').classList.add('display-none-js')
+    document.querySelector('.toggler-clearfix').classList.remove('display-none-js')
+    document.querySelector('.toggler-clearfix-1').classList.add('display-none-js')
+
+    //  searchBox1.classList.add('display-none-js')
   }
   return tripType=trip.value;
 
@@ -95,7 +113,7 @@ search.addListener('places_changed',()=>{
 
 })
 
-const searchBox1 = document.querySelector('[data-drop-city]')
+
 
 const search2 = new google.maps.places.SearchBox(searchBox1)
 
@@ -132,17 +150,49 @@ async function distanceCalculator(){
 
   if(cartype==="sedan"){
     if(tripType==="droptrip"){ 
+      //Sedan,drop trip and above 400kms
+      if(kms >= 400){
       value = kms*12
+      beta=600
+    }
+       //Sedan,drop trip and below 400kms
+      else{
+        value = kms*12
+        beta=300
+      }
+    }
+    //round trip and sedan
+    else{
+      console.log(dropd , pickupd)
+      var date1 =dropd.split('/')
+      var date2 =  pickupd.split('/')
+      console.log(date1,date2)
+      const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+      const firstDate = new Date(date1[2], date1[1], date1[0]);
+      const secondDate = new Date(date2[2], date2[1], date2[0]);
+      
+      const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+      
+      value = diffDays*250*10
       beta=300
-    }else{
-      value = kms*10*2
-      beta=400
     }
  }else{if(tripType==="droptrip"){ 
+   if(kms >= 400){ value = kms*15
+    beta=600}else{
   value = kms*15
-  beta=300
+  beta=400}
 }else{
-  value = kms*13*2
+  console.log(dropd , pickupd)
+  var date1 =dropd.split('/')
+  var date2 =  pickupd.split('/')
+  console.log(date1,date2)
+  const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+  const firstDate = new Date(date1[2], date1[1], date1[0]);
+  const secondDate = new Date(date2[2], date2[1], date2[0]);
+  
+  const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
+  
+  value = diffDays*250*13
   beta=400
 }}
 

@@ -10,12 +10,14 @@ $dropd = $_POST["dropd"];
 $km=$_POST["kms"];
 $rate=$_POST["rate"];
 $name=$_POST["name"];
+$phone2 = 8220085613;
 
 // echo $rate;
 
 
 
-$msg= "Success\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate  Extra km rs:  Toll, Permit, Hill Charges Extra";
+$msg= "OneWayHireCabs\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate  Extra km rs:  Toll, Permit, Hill Charges Extra";
+$msg2= "New order placed \nContact:$phone Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate  Extra km rs:  Toll, Permit, Hill Charges Extra";
 
 // echo $msg;
 
@@ -39,7 +41,21 @@ $url="https://www.sms4india.com/api/v1/sendCampaign";
 $message = urlencode($msg);// urlencode your message
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_POST, 1);// set post data to true
-curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=TDBFEOEB2HJMZXPLUX43BP6MHOACAMW1&secret=NB139GYO72HVQT0P&usetype=stage&phone=$phone&senderid=oneway&message=$message");// post data
+curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=1GLM6B4OEH6GHJ8OIJI5TZO4X0XW4UOU&secret=HAP6B2HLCVB8WYD4&usetype=stage&phone=$phone&senderid=oneway&message=$message");// post data
+// query parameter values must be given without squarebrackets.
+ // Optional Authentication:
+curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+$result = curl_exec($curl);
+curl_close($curl);
+echo $result;
+
+$url="https://www.sms4india.com/api/v1/sendCampaign";
+$message = urlencode($msg2);// urlencode your message
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_POST, 1);// set post data to true
+curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=1GLM6B4OEH6GHJ8OIJI5TZO4X0XW4UOU&secret=HAP6B2HLCVB8WYD4&usetype=stage&phone=$phone2&senderid=oneway&message=$message");// post data
 // query parameter values must be given without squarebrackets.
  // Optional Authentication:
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);

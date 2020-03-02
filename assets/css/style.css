@@ -9212,7 +9212,7 @@ line-height: 52px;
 }
 
 .display-none-js{
-   visibility: hidden;
+   display: none;
 }
 
 .width-modal-body{

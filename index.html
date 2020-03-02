@@ -471,7 +471,16 @@ select:-webkit-autofill:focus  {
                     <form action="#" method="POST" id="pickupform" class="advance-search-query input-night-rider yellow-theme" onsubmit="distanceCalculator()">
                         <div class="regular-search">                        
                             <div class="row">
-                             
+                                <div class="col-md-4">
+                                    <div class="input">
+                                     <label for="tripType">Drop Trip/Round Trip</label>
+                                         <select id="tripType" name="tripType">
+                                             <option value="droptrip" class="color-black">Drop trip</option>
+                                             <option value="roundtrip" class="color-black">Round trip</option>
+                                         </select>
+                                     </div><!--/.input-->
+                                 </div><!--/.col-md-4-->
+
                                 <div class="col-md-4">
                                     <label>Picking up location</label>
                                     <div class="input">
@@ -480,7 +489,7 @@ select:-webkit-autofill:focus  {
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
 
-                                <div class="col-md-4">
+                                <div class="col-md-4 drop-location-toggle">
                                     <label>Dropping off location</label>
                                     <div class="input">
                                         <i class="fa fa-map-marker"></i>
@@ -495,6 +504,7 @@ select:-webkit-autofill:focus  {
                                         <input type="time" name="pickupt" class=" form-controller" placeholder="24hr format" id="time" required>
                                       </div><!--/.input-->
                                 </div><!--/.col-md-4-->
+                               
 
                                 <div class="col-md-4">
                                     <div class="input">
@@ -507,8 +517,8 @@ select:-webkit-autofill:focus  {
                                  </div><!--/.col-md-4-->
 
                                
-
-                                 
+                                
+                                  
                                 <div class="col-md-4">
                                     <label>Name</label>
                                     <div class="input">
@@ -516,7 +526,8 @@ select:-webkit-autofill:focus  {
                                         <input type="text" name="name" class=" form-controller nameCustomer" placeholder="ex.reba" required>
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
-
+                                <div class="clearfix toggler-clearfix-1"></div><!-- /.clearfix -->
+                                
                                 <div class="col-md-4">
                                     <label>Contact number</label>
                                     <div class="input">
@@ -524,17 +535,11 @@ select:-webkit-autofill:focus  {
                                         <input type="text"  class=" form-controller" placeholder="phone" name="phone" id="phone" required>
                                     </div><!--/.input-->
                                 </div><!--/.col-md-4-->
+
+                                <div class="clearfix toggler-clearfix"></div><!-- /.clearfix -->
                                 
-                                <div class="clearfix"></div><!-- /.clearfix -->
-                                <div class="col-md-4">
-                                    <div class="input">
-                                     <label for="tripType">Drop Trip/Round Trip</label>
-                                         <select id="tripType" name="tripType">
-                                             <option value="droptrip" class="color-black">Drop trip</option>
-                                             <option value="roundtrip" class="color-black">Round trip</option>
-                                         </select>
-                                     </div><!--/.input-->
-                                 </div><!--/.col-md-4-->
+                               
+                            
 
                                 <div class="col-md-4 ">
                                     <label>Picking up date</label>
@@ -598,6 +603,7 @@ select:-webkit-autofill:focus  {
                                                     <li class="modal-li"  id="rateModal">Rate: </li>
                                                     <li class="modal-li"  id="betaModal">Driver beta: </li>
                                                     <li class="modal-li"  id="totalModals">Total rate:</li>
+                                                    <li class="modal-li"  id="totalModals">Toll, Permit, Hill Charges Extra</li>
                                                 </ul>
                                     
                                             </div>
