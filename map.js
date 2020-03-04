@@ -216,6 +216,7 @@ if(tripType==="droptrip"){displaykms=kms}else{
   document.querySelector('#nameModal').innerHTML=formelements[5]
   document.querySelector('#totalModal').innerHTML=totalRate
   document.querySelector('#tripInfo').innerHTML="Drop Trip"
+  document.querySelector('#carType').innerHTML=cartype.toUpperCase()
   document.querySelector('#pickuplModal').innerHTML=`Pickup Location: ${formelements[0]}`
   document.querySelector('#droplModal').innerHTML=`Drop Location:${formelements[1]}`
   
@@ -244,9 +245,9 @@ function roundtripCalculator(){
       const secondDate = new Date(date2[2], date2[1], date2[0]);
       
       const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
-      
-      value = diffDays*250*10
-      beta=300
+      const correctdiff = diffDays+1
+      value = correctdiff*250*10
+      beta=300*correctdiff
       totalRate=value+beta
       kms="Per day 250kms"
   }
@@ -260,15 +261,16 @@ function roundtripCalculator(){
     const secondDate = new Date(date2[2], date2[1], date2[0]);
     
     const diffDays = Math.round(Math.abs((firstDate - secondDate) / oneDay));
-    
-    value = diffDays*250*13
-    beta=400
+     const correctdiff2 = diffDays+1
+    value = correctdiff2*250*13
+    beta=400*correctDiff2
     totalRate=value+beta
     kms="Per day 250kms"
   }
   document.querySelector('#nameModal').innerHTML=formelements[5]
   document.querySelector('#totalModal').innerHTML=totalRate
   document.querySelector('#tripInfo').innerHTML="Round Trip"
+  document.querySelector('#carType').innerHTML=cartype.toUpperCase()
   document.querySelector('#pickuplModal').innerHTML=`Pickup Location: ${formelements[0]}`
   document.querySelector('#droplModal').innerHTML=`Drop Location:${formelements[1]}`
   
@@ -296,7 +298,7 @@ document.querySelector('.msg-btn').addEventListener('click',()=>{
 $.ajax({
   type : "POST",  //type of method
   url  : "email.php",  //your page
-  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6]},// passing the values
+  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6],triptype:tripType},// passing the values
   success: function(res){ 
     
     window.location.reload()

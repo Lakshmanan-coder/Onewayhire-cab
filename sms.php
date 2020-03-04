@@ -10,7 +10,7 @@ $dropd = $_POST["dropd"];
 $km=$_POST["kms"];
 $rate=$_POST["rate"];
 $name=$_POST["name"];
-$phone2 = 8220085613;
+$phone2 = 9841452099;
 
 // echo $rate;
 
@@ -41,7 +41,7 @@ $url="https://www.sms4india.com/api/v1/sendCampaign";
 $message = urlencode($msg);// urlencode your message
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_POST, 1);// set post data to true
-curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=1GLM6B4OEH6GHJ8OIJI5TZO4X0XW4UOU&secret=HAP6B2HLCVB8WYD4&usetype=stage&phone=$phone&senderid=oneway&message=$message");// post data
+curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=GW6XZCJNJGWFZMYFR92NPLG71ZNXSCQ7&secret=P7SQ76QM5HWA966Q&usetype=stage&phone=$phone&senderid=oneway&message=$message");// post data
 // query parameter values must be given without squarebrackets.
  // Optional Authentication:
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
@@ -55,7 +55,7 @@ $url="https://www.sms4india.com/api/v1/sendCampaign";
 $message = urlencode($msg2);// urlencode your message
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_POST, 1);// set post data to true
-curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=1GLM6B4OEH6GHJ8OIJI5TZO4X0XW4UOU&secret=HAP6B2HLCVB8WYD4&usetype=stage&phone=$phone2&senderid=oneway&message=$message");// post data
+curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=GW6XZCJNJGWFZMYFR92NPLG71ZNXSCQ7&secret=P7SQ76QM5HWA966Q&usetype=stage&phone=$phone2&senderid=oneway&message=$message");// post data
 // query parameter values must be given without squarebrackets.
  // Optional Authentication:
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
