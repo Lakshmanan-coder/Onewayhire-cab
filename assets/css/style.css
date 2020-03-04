@@ -9288,7 +9288,7 @@ line-height: 52px;
 }
 
 .modal-body { 
-  max-height: 350px !important; 
+  max-height: 500px !important; 
   padding: 15px !important; 
   overflow-y: auto !important; 
   -webkit-overflow-scrolling: touch !important; 
