@@ -9232,7 +9232,10 @@ line-height: 52px;
   margin-left: 50%;
   width: inherit;
 }
-
+.width-modal-body{
+  width:inherit;
+  margin:0 auto;
+}
 .responsive-width{
   width:10%;
 
