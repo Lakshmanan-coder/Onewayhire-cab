@@ -9235,6 +9235,7 @@ line-height: 52px;
 .width-modal-body{
   width:inherit;
   margin:0 auto;
+  padding:0 !important;
 }
 .responsive-width{
   width:10%;
@@ -9291,7 +9292,7 @@ line-height: 52px;
 }
 
 .modal-body { 
-  max-height: 500px !important; 
+  min-height: 500px !important; 
   padding: 15px !important; 
   overflow-y: auto !important; 
   -webkit-overflow-scrolling: touch !important; 
