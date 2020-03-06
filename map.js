@@ -301,7 +301,7 @@ $.ajax({
   data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6],triptype:tripType},// passing the values
   success: function(res){ 
     
-    window.location.reload()
+    // window.location.reload()
                         console.log(res)      }
 });
 
