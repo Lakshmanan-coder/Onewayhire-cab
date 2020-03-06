@@ -10,7 +10,7 @@ $dropd = $_POST["dropd"];
 $km=$_POST["kms"];
 $rate=$_POST["rate"];
 $name=$_POST["name"];
-$phone2 =8072395501;
+$phone2 =8610080366;
 
 // echo $rate;
 
