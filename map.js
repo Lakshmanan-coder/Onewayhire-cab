@@ -163,8 +163,12 @@ async function distanceCalculator(){
     }
        //Sedan,drop trip and below 400kms
       else{
+        if(kms <=130){
+          value = 130*12
+          beta=300
+        }else{
         value = kms*12
-        beta=300
+        beta=300}
       }
     }
     //round trip and sedan
