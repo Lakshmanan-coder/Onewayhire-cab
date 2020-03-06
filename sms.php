@@ -41,7 +41,7 @@ $url="https://www.sms4india.com/api/v1/sendCampaign";
 $message = urlencode($msg);// urlencode your message
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_POST, 1);// set post data to true
-curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=GW6XZCJNJGWFZMYFR92NPLG71ZNXSCQ7&secret=P7SQ76QM5HWA966Q&usetype=stage&phone=$phone&senderid=oneway&message=$message");// post data
+curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=GW6XZCJNJGWFZMYFR92NPLG71ZNXSCQ7&secret=P7SQ76QM5HWA966Q&usetype=prod&phone=$phone&senderid=oneway&message=$message");// post data
 // query parameter values must be given without squarebrackets.
  // Optional Authentication:
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
