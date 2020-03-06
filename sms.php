@@ -41,7 +41,7 @@ $url="https://www.sms4india.com/api/v1/sendCampaign";
 $message = urlencode($msg);// urlencode your message
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_POST, 1);// set post data to true
-curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=8SXV8QM7KI2Q2APPKOCFOZGWUOPYOF8E&secret=0TGRHVX6MVO4FP9X&usetype=prod&phone=$phone&senderid=ONEWAY&message=$message");// post data
+curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=8SXV8QM7KI2Q2APPKOCFOZGWUOPYOF8E&secret=0TGRHVX6MVO4FP9X&usetype=prod&phone=$phone&senderid=WAYCAB&message=$message");// post data
 // query parameter values must be given without squarebrackets.
  // Optional Authentication:
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
@@ -55,7 +55,7 @@ $url="https://www.sms4india.com/api/v1/sendCampaign";
 $message = urlencode($msg2);// urlencode your message
 $curl = curl_init();
 curl_setopt($curl, CURLOPT_POST, 1);// set post data to true
-curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=8SXV8QM7KI2Q2APPKOCFOZGWUOPYOF8E&secret=0TGRHVX6MVO4FP9X&usetype=prod&phone=$phone2&senderid=ONEWAY&message=$message");// post data
+curl_setopt($curl, CURLOPT_POSTFIELDS, "apikey=8SXV8QM7KI2Q2APPKOCFOZGWUOPYOF8E&secret=0TGRHVX6MVO4FP9X&usetype=prod&phone=$phone2&senderid=WAYCAB&message=$message");// post data
 // query parameter values must be given without squarebrackets.
  // Optional Authentication:
 curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
