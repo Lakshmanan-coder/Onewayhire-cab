@@ -10,7 +10,7 @@ $dropd = $_POST["dropd"];
 $km=$_POST["kms"];
 $rate=$_POST["rate"];
 $name=$_POST["name"];
-$$triptype=$_POST["triptype"];
+$triptype=$_POST["triptype"];
 
 // echo $rate;
 

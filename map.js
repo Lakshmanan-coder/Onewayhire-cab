@@ -283,7 +283,7 @@ function roundtripCalculator(){
 }
 // console.log(formelements,totalRate,kms)
 document.querySelector('.msg-btn').addEventListener('click',()=>{
-  console.log(formelements,totalRate,kms)
+  console.log(formelements,totalRate,kms,tripType)
   $.ajax({
   type : "POST",  //type of method
   url  : "sms.php",  //your page
