@@ -19,41 +19,20 @@ if($dropd===''){
     $dropd='-';
 }
 
+$message = '<html><body>';
+$message .= "<h1>Customer Trip Requestation </h1>";
+$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+$message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $name . "</td></tr>";
+$message .= "<tr><td><strong>Pickup Location:</strong> </td><td>" . $pickupl . "</td></tr>";
+$message .= "<tr><td><strong>Drop Location:</strong> </td><td>" .$dropl . "</td></tr>";
+$message .= "<tr><td><strong>Trip Type:</strong> </td><td>" . $triptype . "</td></tr>";
+$message .= "<tr><td><strong>Pickup Date:</strong> </td><td>" . $pickupd . "</td></tr>";
+$message .= "<tr><td><strong>Total Kms:</strong> </td><td>" . $kms . "</td></tr>";
+$message .= "<tr><td><strong>Total Rate:</strong> </td><td>" . $rate . "</td></tr>";
+$message .= "</table>";
+$message .= "<p><strong>Toll Permits , Hill Charges Extra</strong></p>";
+$message .= "</body></html>";
 
-$htmlContent = '
-    <html> 
-    <head> 
-        <title>Welcome to CodexWorld</title> 
-    </head> 
-    <body> 
-        <h1>Thanks you for joining with us!</h1> 
-
-
-<table width="100%" cellpadding="0" cellspacing="0" style="min-width:100%;">
-    <thead>
-      <tr>
-        <th scope="col" style="padding:5px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;line-height:30px">Name</th>
-        <th scope="col" style="padding:5px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;line-height:30px">Pickup Location</th>
-        <th scope="col" style="padding:5px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;line-height:30px">Drop Location</th>
-        <th scope="col" style="padding:5px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;line-height:30px">Pickup Time</th>
-        <th scope="col" style="padding:5px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;line-height:30px">Total Amount</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td valign="top" style="padding:5px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">{$name}</td>
-        <td valign="top" style="padding:5px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">{$pickupl}</td>
-        <td valign="top" style="padding:5px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">{$dropl}</td>
-        <td valign="top" style="padding:5px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">{$pickupt}</td>
-        <td valign="top" style="padding:5px; font-family: Arial,sans-serif; font-size: 16px; line-height:20px;">{$rate}</td>
-      </tr>
-           
-      
-    </tbody>
-</table>
-<p>Toll Permit and Hill charges Extra </p>
-    </body> 
-    </html>'; 
 
 $msg= "Success\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate  Extra km rs:  Toll, Permit, Hill Charges Extra";
 
@@ -63,11 +42,13 @@ $to="onewayhirecab@gmail.com"; // Receiver Email ID, Replace with your email ID
 			            	$subject='Customer Request Form - OnewayHire cab';
 						
                             $headers="From: No-reply@onewayhirecab.com";
+                           
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 							 
 							 $msg2="Name : $name \n\n Contact No: $phone \n\n Trip-Type: $triptype \n Pickup-Location: $pickupl\n\n Droping-Location: $dropl \n\nPickup-Time: $pickupt \n\nPickup-Date: $pickupd\n\n Amount: Rs. $rate\n\n Drop Date: $dropd";
-							$retval = mail ($to,$subject,$htmlContent,$headers);
+							$retval = mail ($to,$subject,$message,$headers);
 							if($retval == true){
-							echo $msg2;
+							echo $message;
 								
 							}
 							else{
@@ -78,15 +59,31 @@ $to="onewayhirecab@gmail.com"; // Receiver Email ID, Replace with your email ID
 if($email===''){
 	echo 'no email';
 }else{
+
+  $messag = '<html><body>';
+$messag .= '<h1>Mail Confirmation Regarding Trip</h1>';
+$messag .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+$messag .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $name . "</td></tr>";
+$messag .= "<tr><td><strong>Pickup Location:</strong> </td><td>" . $pickupl . "</td></tr>";
+$messag .= "<tr><td><strong>Drop Location:</strong> </td><td>" .$dropl . "</td></tr>";
+$messag .= "<tr><td><strong>Trip Type:</strong> </td><td>" . $triptype . "</td></tr>";
+$messag .= "<tr><td><strong>Pickup Date:</strong> </td><td>" . $pickupd . "</td></tr>";
+$messag .= "<tr><td><strong>Total Kms:</strong> </td><td>" . $kms . "</td></tr>";
+$messag .= "<tr><td><strong>Total Rate:</strong> </td><td>" . $rate . "</td></tr>";
+$messag .= "</table>";
+$messag .= "<p><strong>Toll Permits , Hill Charges Extra</strong></p>";
+$messag .= "</body></html>";
 	$to= $email; // Receiver Email ID, Replace with your email ID
 			            	$subject='Trip confirmation Mail - OnewayHire cab';
 						
                             $headers="From: onewayhirecab@gmail.com";
+                            
+$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 							 
 							 $msg2="Name : $name \n\n Contact No: $phone \n\n Trip-Type: $triptype \n Pickup-Location: $pickupl\n\n Droping-Location: $dropl \n\nPickup-Time: $pickupt \n\nPickup-Date: $pickupd\n\n Amount: Rs. $rate\n\n Drop Date: $dropd";
-							$retval = mail ($to,$subject,$msg2,$headers);
+							$retval = mail ($to,$subject,$messag,$headers);
 							if($retval == true){
-							echo $msg2;
+							echo $messag;
 								
 							}
 							else{
