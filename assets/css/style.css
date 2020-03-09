@@ -9154,7 +9154,7 @@ line-height: 52px;
 
 
 .type{
-	width: 300px;
+	width: inherit;
 	border-radius: 5px 5px 0px 0px;
 	background-color: #eac80d;
 	height: 62px;
@@ -9194,7 +9194,7 @@ line-height: 52px;
 }
 
 .plan{
-	width: 300px;
+	width: inherit;
 	background-color: #2b2937;
 
 	border-radius: 0px 0px 5px 5px;
@@ -9216,7 +9216,7 @@ line-height: 52px;
 }
 
 .width-modal-body{
-  width:60%;
+  width:100%;
   margin:0 auto;
 }
 

@@ -24,6 +24,7 @@ var displaykms
      var dropd 
      var phone 
      var name
+     var email
      var formelements=[]
     
 const car = document.querySelector('#cars');
@@ -35,15 +36,15 @@ tripType=trip.value
 if(trip.value==="droptrip"){
   
   document.querySelector('.type-selector').classList.add('display-none-js')
-  document.querySelector('.drop-location-toggle').classList.remove('display-none-js')
-  document.querySelector('.toggler-clearfix-1').classList.remove('display-none-js')
-  document.querySelector('.toggler-clearfix').classList.add('display-none-js')
+  // document.querySelector('.drop-location-toggle').classList.remove('display-none-js')
+  // document.querySelector('.toggler-clearfix-1').classList.remove('display-none-js')
+  // document.querySelector('.toggler-clearfix').classList.add('display-none-js')
   // searchBox1.classList.remove('display-none-js')
 }else{
   document.querySelector('.type-selector').classList.remove('display-none-js')
-  document.querySelector('.drop-location-toggle').classList.add('display-none-js')
-  document.querySelector('.toggler-clearfix').classList.remove('display-none-js')
-  document.querySelector('.toggler-clearfix-1').classList.add('display-none-js')
+  // document.querySelector('.drop-location-toggle').classList.add('display-none-js')
+  // document.querySelector('.toggler-clearfix').classList.remove('display-none-js')
+  // document.querySelector('.toggler-clearfix-1').classList.add('display-none-js')
   // searchBox1.classList.add('display-none-js')
 }
 
@@ -57,6 +58,7 @@ form.addEventListener('submit',(e)=>{
       dropd =document.querySelector('.date-end').value
       phone =document.querySelector('#phone').value
       name= document.querySelector('.nameCustomer').value
+      email= document.querySelector('#email').value
      formelements=[]
 
     formelements.push(pickupl)
@@ -66,6 +68,7 @@ form.addEventListener('submit',(e)=>{
     formelements.push(pickupd)
     formelements.push(name)
     formelements.push(dropd)
+    formelements.push(email)
    
     if(tripType==="droptrip"){
       distanceCalculator()
@@ -93,15 +96,15 @@ trip.addEventListener('change',()=>{
   console.log(tripType)
   if(trip.value==="droptrip"){
     document.querySelector('.type-selector').classList.add('display-none-js')
-    document.querySelector('.drop-location-toggle').classList.remove('display-none-js')
-    document.querySelector('.toggler-clearfix-1').classList.remove('display-none-js')
-    document.querySelector('.toggler-clearfix').classList.add('display-none-js')
+    // document.querySelector('.drop-location-toggle').classList.remove('display-none-js')
+    // document.querySelector('.toggler-clearfix-1').classList.remove('display-none-js')
+    // document.querySelector('.toggler-clearfix').classList.add('display-none-js')
     // searchBox1.classList.remove('display-none-js')
   }else{
     document.querySelector('.type-selector').classList.remove('display-none-js')
-    document.querySelector('.drop-location-toggle').classList.add('display-none-js')
-    document.querySelector('.toggler-clearfix').classList.remove('display-none-js')
-    document.querySelector('.toggler-clearfix-1').classList.add('display-none-js')
+    // document.querySelector('.drop-location-toggle').classList.add('display-none-js')
+    // document.querySelector('.toggler-clearfix').classList.remove('display-none-js')
+    // document.querySelector('.toggler-clearfix-1').classList.add('display-none-js')
 
     //  searchBox1.classList.add('display-none-js')
   }
@@ -114,7 +117,7 @@ search.addListener('places_changed',()=>{
     if(place == null) return
     latitude = place[0].geometry.location.lat()
     longitude =place[0].geometry.location.lng()
-    console.log(latitude,longitude)
+    // console.log(latitude,longitude)
  
 
 })
@@ -189,8 +192,12 @@ async function distanceCalculator(){
  }else{if(tripType==="droptrip"){ 
    if(kms >= 400){ value = kms*15
     beta=600}else{
+      if(kms <=130){
+        value = 130*12
+        beta=400
+      }else{
   value = kms*15
-  beta=400}
+  beta=400}}
  }
 
 }
@@ -225,14 +232,14 @@ if(tripType==="droptrip"){displaykms=kms}else{
   document.querySelector('#droplModal').innerHTML=`Drop Location:${formelements[1]}`
   
   document.querySelector('#kmsModal').innerHTML=displaykms
-  document.querySelector('#rateModal').innerHTML=`Rate:${valueint}`
-  document.querySelector('#betaModal').innerHTML=`Driver Beta :${beta}`
-  document.querySelector('#totalModals').innerHTML=`Total Rate :${totalRate}`
+  document.querySelector('#rateModal').innerHTML=`Rate: Rs.${valueint}`
+  document.querySelector('#betaModal').innerHTML=`Driver Beta : Rs.${beta}`
+  document.querySelector('#totalModals').innerHTML=`Total Rate : Rs.${totalRate}`
  
   document.querySelector('.display-none-custom').click()
-  console.log(miles)
-  console.log(valueint)
-console.log(kms)
+//   console.log(miles)
+//   console.log(valueint)
+// console.log(kms)
 
 
 
@@ -243,7 +250,7 @@ function roundtripCalculator(){
   if(cartype==="sedan"){
     var date1 =dropd.split('/')
     var date2 =  pickupd.split('/')
-      console.log(date1,date2)
+      // console.log(date1,date2)
       const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
       const firstDate = new Date(date1[2], date1[1], date1[0]);
       const secondDate = new Date(date2[2], date2[1], date2[0]);
@@ -259,7 +266,7 @@ function roundtripCalculator(){
   else{
   var date1 =dropd.split('/')
   var date2 =  pickupd.split('/')
-    console.log(date1,date2)
+   
     const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
     const firstDate = new Date(date1[2], date1[1], date1[0]);
     const secondDate = new Date(date2[2], date2[1], date2[0]);
@@ -279,9 +286,9 @@ function roundtripCalculator(){
   document.querySelector('#droplModal').innerHTML=`Drop Location:${formelements[1]}`
   
   document.querySelector('#kmsModal').innerHTML= "Per day 250kms"
-  document.querySelector('#rateModal').innerHTML=`Rate:${value}`
-  document.querySelector('#betaModal').innerHTML=`Driver Beta :${beta}`
-  document.querySelector('#totalModals').innerHTML=`Total Rate :${totalRate}`
+  document.querySelector('#rateModal').innerHTML=`Rate: Rs.${value}`
+  document.querySelector('#betaModal').innerHTML=`Driver Beta : Rs.${beta}`
+  document.querySelector('#totalModals').innerHTML=`Total Rate : Rs.${totalRate}`
  
   document.querySelector('.display-none-custom').click()
 }
@@ -296,17 +303,18 @@ document.querySelector('.msg-btn').addEventListener('click',()=>{
   success: function(res){ 
     alert("Good job!", "We will contact you asap !", "success");
     
-                        console.log(res)      }
+                         
+                        window.location.reload()   }
 });
 
 $.ajax({
   type : "POST",  //type of method
   url  : "email.php",  //your page
-  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6],triptype:tripType},// passing the values
+  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6],triptype:tripType,email:formelements[7]},// passing the values
   success: function(res){ 
     
     // window.location.reload()
-                        console.log(res)      }
+                            }
 });
 
 
