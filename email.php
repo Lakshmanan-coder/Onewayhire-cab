@@ -34,7 +34,7 @@ $message .= "<p><strong>Toll Permits , Hill Charges Extra</strong></p>";
 $message .= "</body></html>";
 
 
-$msg= "Success\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate  Extra km rs:  Toll, Permit, Hill Charges Extra";
+// $msg= "Success\nContact:8610080366 Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate  Extra km rs:  Toll, Permit, Hill Charges Extra";
 
 // echo $msg;
 
@@ -80,7 +80,7 @@ $messag .= "</body></html>";
                             
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 							 
-							 $msg2="Name : $name \n\n Contact No: $phone \n\n Trip-Type: $triptype \n Pickup-Location: $pickupl\n\n Droping-Location: $dropl \n\nPickup-Time: $pickupt \n\nPickup-Date: $pickupd\n\n Amount: Rs. $rate\n\n Drop Date: $dropd";
+							//  $msg2="Name : $name \n\n Contact No: $phone \n\n Trip-Type: $triptype \n Pickup-Location: $pickupl\n\n Droping-Location: $dropl \n\nPickup-Time: $pickupt \n\nPickup-Date: $pickupd\n\n Amount: Rs. $rate\n\n Drop Date: $dropd";
 							$retval = mail ($to,$subject,$messag,$headers);
 							if($retval == true){
 							echo $messag;
