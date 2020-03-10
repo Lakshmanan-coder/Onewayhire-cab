@@ -25,6 +25,7 @@ var displaykms
      var phone 
      var name
      var email
+     var seccont
      var formelements=[]
     
 const car = document.querySelector('#cars');
@@ -59,6 +60,7 @@ form.addEventListener('submit',(e)=>{
       phone =document.querySelector('#phone').value
       name= document.querySelector('.nameCustomer').value
       email= document.querySelector('#email').value
+      seccont= document.querySelector('#seccont').value
      formelements=[]
 
     formelements.push(pickupl)
@@ -69,6 +71,7 @@ form.addEventListener('submit',(e)=>{
     formelements.push(name)
     formelements.push(dropd)
     formelements.push(email)
+    formelements.push(seccont)
    
     if(tripType==="droptrip"){
       distanceCalculator()
@@ -83,6 +86,8 @@ form.addEventListener('submit',(e)=>{
      document.querySelector('#phone').value=""
      document.querySelector('.date-end').value=""
      document.querySelector('.nameCustomer').value=""
+     document.querySelector('#email').value=""
+     document.querySelector('#seccont').value=""
 
      return formelements
 })
@@ -298,7 +303,7 @@ document.querySelector('.msg-btn').addEventListener('click',()=>{
   $.ajax({
   type : "POST",  //type of method
   url  : "sms.php",  //your page
-  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],triptype:tripType,cartype:cartype,beta:beta},// passing the values
+  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],triptype:tripType,cartype:cartype,beta:beta,secont:formelements[8]},// passing the values
  
   success: function(res){ 
         
@@ -314,7 +319,7 @@ document.querySelector('.msg-btn').addEventListener('click',()=>{
 $.ajax({
   type : "POST",  //type of method
   url  : "email.php",  //your page
-  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6],triptype:tripType,email:formelements[7],cartype:cartype},// passing the values
+  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6],triptype:tripType,email:formelements[7],cartype:cartype,secont:formelements[8]},// passing the values
   success: function(res){ 
 
     

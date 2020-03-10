@@ -13,6 +13,7 @@ $name=$_POST["name"];
 $triptype=$_POST["triptype"];
 $email=$_POST["email"];
 $cartype=$_POST["cartype"];
+$secont=$_POST["secont"];
 
 // echo $rate;
 if($triptype==="droptrip" && $cartype==="sedan"){
@@ -32,6 +33,8 @@ $message = '<html><body>';
 $message .= "<h1>Customer Trip Requestation </h1>";
 $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
 $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $name . "</td></tr>";
+$message .= "<tr><td><strong>Contact:</strong> </td><td>" . $phone . "</td></tr>";           
+$message .= "<tr><td><strong>Secondary Contact:</strong> </td><td>" . $secont . "</td></tr>";
 $message .= "<tr><td><strong>Pickup Location:</strong> </td><td>" . $pickupl . "</td></tr>";
 $message .= "<tr><td><strong>Drop Location:</strong> </td><td>" .$dropl . "</td></tr>";
 $message .= "<tr><td><strong>Trip Type:</strong> </td><td>" . $triptype . "</td></tr>";
