@@ -30,7 +30,7 @@ if($triptype==="droptrip" && $cartype==="sedan"){
 $Triptype = $triptype.strtoupper();
 $Cartype = $cartype.strtoupper();
 $msg3 ="Taxi booking Detail: ID 3011198 $pickupl to $dropl \n$Triptype $Cartype, $pickupd @ $pickupt, $fare, Driver Allowance Rs.$beta,\n Customer contact : $phone\nCustomer Name: $name";
-$msg= "OneWayHireCabs\nContact:8610080366\nPickup-Location: $pickupl\nPickup-Time: $pickupt\nDroping-Location: $dropl\nKm:$km \nFare: $fare \nAmount: Rs. $rate \nToll-Permit, Hill Charges Extra";
+$msg= "OneWayHireCabs\nContact:8610080366\nPickup-Location: $pickupl\nPickup-Time: $pickupt\nDroping-Location: $dropl\nKm:$km \nTrip Type: $Triptype\nFare: $fare \nAmount: Rs. $rate \nToll-Permit, Hill Charges Extra";
 $msg2= "New order placed \nContact:$phone Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate ";
 
 // echo $msg;
