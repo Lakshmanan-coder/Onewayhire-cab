@@ -79,6 +79,7 @@ $messag .= "<tr><td><strong>Pickup Location:</strong> </td><td>" . $pickupl . "<
 $messag .= "<tr><td><strong>Drop Location:</strong> </td><td>" .$dropl . "</td></tr>";
 $messag .= "<tr><td><strong>Trip Type:</strong> </td><td>" . $triptype . "</td></tr>";
 $messag .= "<tr><td><strong>Pickup Date:</strong> </td><td>" . $pickupd . "</td></tr>";
+$messag .= "<tr><td><strong>Fare:</strong> </td><td>" . $fare . "</td></tr>";
 $messag .= "<tr><td><strong>Total Kms:</strong> </td><td>" . $km . "</td></tr>";
 $messag .= "<tr><td><strong>Total Rate:</strong> </td><td>" . $rate . "</td></tr>";
 $messag .= "</table>";

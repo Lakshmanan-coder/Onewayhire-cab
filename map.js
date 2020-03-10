@@ -303,7 +303,10 @@ document.querySelector('.msg-btn').addEventListener('click',()=>{
   success: function(res){ 
         
     swal("Good job!", "We will contact you asap !", "success");
-    window.location.reload()
+    setTimeout(()=>{
+      window.location.reload()
+    },2000)
+    
                          
                           }
 });
