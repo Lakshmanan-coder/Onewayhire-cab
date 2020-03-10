@@ -301,6 +301,7 @@ document.querySelector('.msg-btn').addEventListener('click',()=>{
   data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5]},// passing the values
  
   success: function(res){ 
+    console.log(res)
     alert("Good job!", "We will contact you asap !", "success");
     
                          
@@ -312,6 +313,7 @@ $.ajax({
   url  : "email.php",  //your page
   data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6],triptype:tripType,email:formelements[7]},// passing the values
   success: function(res){ 
+    console.log(res)
     
     window.location.reload()
                             }
