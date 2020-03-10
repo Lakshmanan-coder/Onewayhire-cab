@@ -10,9 +10,10 @@ $dropd = $_POST["dropd"];
 $km=$_POST["kms"];
 $rate=$_POST["rate"];
 $name=$_POST["name"];
-$phone2 =8610080366;
+$phone2 =8220085613;
 $triptype=$_POST["triptype"];
 $cartype=$_POST["cartype"];
+$beta=$_POST["beta"];
 
 if($triptype==="droptrip" && $cartype==="sedan"){
   $fare = "Rs.12/km";
@@ -27,8 +28,8 @@ if($triptype==="droptrip" && $cartype==="sedan"){
 // echo $rate;
 
 
-
-$msg= "OneWayHireCabs\nContact:8610080366\n Pickup-Location: $pickupl\n Pickup-Time: $pickupt\n Droping-Location: $dropl\n Km:$km \n Fare: $fare \n Amount: Rs. $rate  Toll-Permit, Hill Charges Extra";
+$msg3 ="Taxi booking Detail: ID 3011198 $pickupl to $dropl $triptype,$cartype, $pickupd @ $pickupt, $fare, Driver Allowance Rs.$beta, Customer : $phone";
+$msg= "OneWayHireCabs\nContact:8610080366\nPickup-Location: $pickupl\nPickup-Time: $pickupt\nDroping-Location: $dropl\nKm:$km \nFare: $fare \nAmount: Rs. $rate \nToll-Permit, Hill Charges Extra";
 $msg2= "New order placed \nContact:$phone Pickup-Location: $pickupl Pickup-Time: $pickupt Droping-Location: $dropl Km:$km   Amount: Rs. $rate ";
 
 // echo $msg;

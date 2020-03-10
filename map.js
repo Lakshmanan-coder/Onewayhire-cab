@@ -298,7 +298,7 @@ document.querySelector('.msg-btn').addEventListener('click',()=>{
   $.ajax({
   type : "POST",  //type of method
   url  : "sms.php",  //your page
-  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],triptype:tripType,cartype:cartype},// passing the values
+  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],triptype:tripType,cartype:cartype,beta:beta},// passing the values
  
   success: function(res){ 
     console.log(res)     
