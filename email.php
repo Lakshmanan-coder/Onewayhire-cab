@@ -41,7 +41,7 @@ $message .= "</body></html>";
 $to="onewayhirecab@gmail.com"; // Receiver Email ID, Replace with your email ID
 			            	$subject='Customer Request Form - OnewayHire cab';
 						
-							$headers="From: No-reply@onewayhirecab.com";
+							$headers="From: No-reply@onewayhirecab.com \r\n";
 							$headers .= "MIME-Version: 1.0\r\n";
                            
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
@@ -77,7 +77,7 @@ $messag .= "</body></html>";
 	$to= $email; // Receiver Email ID, Replace with your email ID
 			            	$subject='Trip confirmation Mail - OnewayHire cab';
 						
-							$headers="From: onewayhirecab@gmail.com";
+							$headers="From: onewayhirecab@gmail.com \r\n";
 							$headers .= "MIME-Version: 1.0\r\n";
                             
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
