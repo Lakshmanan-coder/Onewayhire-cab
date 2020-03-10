@@ -311,7 +311,7 @@ document.querySelector('.msg-btn').addEventListener('click',()=>{
 $.ajax({
   type : "POST",  //type of method
   url  : "email.php",  //your page
-  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6],triptype:tripType,email:formelements[7]},// passing the values
+  data : { kms : displaykms, rate : totalRate,pickupl:formelements[0],dropl:formelements[1],pickupt:formelements[3],phone:formelements[2],pickupd:formelements[4],name:formelements[5],dropd:formelements[6],triptype:tripType,email:formelements[7],cartype:cartype},// passing the values
   success: function(res){ 
 
     

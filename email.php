@@ -12,9 +12,18 @@ $rate=$_POST["rate"];
 $name=$_POST["name"];
 $triptype=$_POST["triptype"];
 $email=$_POST["email"];
+$cartype=$_POST["cartype"];
 
 // echo $rate;
-
+if($triptype==="droptrip" && $cartype==="sedan"){
+	$fare = "Rs.12/km";
+  }else if($triptype==="droptrip" && $cartype==="suv") {
+	  $fare = "Rs.15/km";
+  }else if ($triptype==="droptrip" && $cartype==="suv"){
+	  $fare = "Rs.10/km";
+  }else{
+	  $fare = "Rs.13/km";
+  }
 if($dropd===''){
     $dropd='-';
 }
@@ -27,6 +36,7 @@ $message .= "<tr><td><strong>Pickup Location:</strong> </td><td>" . $pickupl . "
 $message .= "<tr><td><strong>Drop Location:</strong> </td><td>" .$dropl . "</td></tr>";
 $message .= "<tr><td><strong>Trip Type:</strong> </td><td>" . $triptype . "</td></tr>";
 $message .= "<tr><td><strong>Pickup Date:</strong> </td><td>" . $pickupd . "</td></tr>";
+$message .= "<tr><td><strong>Fare:</strong> </td><td>" . $fare . "</td></tr>";
 $message .= "<tr><td><strong>Total Kms:</strong> </td><td>" . $km . "</td></tr>";
 $message .= "<tr><td><strong>Total Rate:</strong> </td><td>" . $rate . "</td></tr>";
 $message .= "</table>";
