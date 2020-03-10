@@ -30,7 +30,7 @@ if($dropd===''){
 }
 
 $message = '<html><body>';
-$message .= "<h1>Customer Trip Requestation </h1>";
+$message .= "<h1>Customer Trip Request </h1>";
 $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
 $message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . $name . "</td></tr>";
 $message .= "<tr><td><strong>Contact:</strong> </td><td>" . $phone . "</td></tr>";           
